@@ -13,5 +13,7 @@ If you're having trouble following the code / understanding it / want to learn m
 Running the code
 ==
 -Make sure you have Python and sklearn (the learning algorithm library) installed on your computer. If you don't want to install this stuff, the McGill computers in the Trottier lab have python 2.7 and sklearn installed on them for you.
+
 -Download main.py and data.txt onto your computer, put them into the same folder.
+
 -Run main.py using python, it will read in the data, build a classifier from it and spit out some stats. The data.txt contains training data for the classifier.
