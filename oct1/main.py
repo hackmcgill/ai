@@ -56,11 +56,12 @@ from sklearn.metrics import f1_score
 	vector is zero).
 
 	TASK: Download the code, learn it, rip it apart and make a better classifier either sticking
-	with GaussNB and improving the bag of words model (or implementing something better like 
-	bag of sentences) or using another type of classifier (like a SVM or k-nearest-neighbor) or
-	a mix of both. Whatever goes. When you're done, check out hackerrank.com (this dataset is 
-	pulled from the document classification challenge (https://www.hackerrank.com/challenges/document-classification).
-	Modify your code to work with stdin and stuff, and upload it. See how you rank!
+	with GaussNB and improving the bag of words model (or implementing something better like looking at 
+	frequencies of words or occurences of words together) or using another type of classifier 
+	(like a SVM or k-nearest-neighbor) or a mix of both. Whatever goes. When you're done, check out 
+	hackerrank.com (this dataset is pulled from the document classification challenge 
+	(https://www.hackerrank.com/challenges/document-classification). Modify your code to work with 
+	stdin and stuff, and upload it. See how you rank!
 
 
 '''
