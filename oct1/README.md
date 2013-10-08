@@ -1,4 +1,4 @@
-October 1: Document Classification fun time
+October 1: Document Classification
 ==
 This week: I give you guys code (with lots of comments lol) for document classification using naive bayes. 
 The example was pulled from hackerrank.com. 
