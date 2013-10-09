@@ -18,7 +18,8 @@ In python and (maybe) scala.
 ##overview
 
 - October 1: Document classification using python, sklearn and naive bayes using a sample dataset pulled from hackerrank.com
-- October 8: Using oct1 in real life. Scraping news websites and classifying their articles our way in python.
+- October 8: Using oct1 in real life. Scraping news websites and classifying their articles our way in python. We all worked on a part of the scraper. Next week we're going to talk about how we put it together.
+- October 15: Putting the scraper together. Testing classification. Improvements on this? Additional resources, and "how do we make this more intelligent?" -> intro to NLP (maybe if we have time).
 
 ##textbooks / book resources
 
