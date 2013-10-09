@@ -27,11 +27,6 @@ def getArticlesList(numArticles):
                         if tag == "ol":
                                 self.isInOl = False
 
-                def handle_data(self, data):
-                        if self.isInOl == True:
-                                #print data
-                                pass
-
         #instantiate the parser and feed it some HTML
         parser = MyHTMLParser()
 
