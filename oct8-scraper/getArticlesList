@@ -1,0 +1,45 @@
+# By Gueorgui Savadjiev
+
+from HTMLParser import HTMLParser
+import requests
+import itertools
+
+def getArticlesList(numArticles):
+
+        #create a subclass and override the handler methods
+        class MyHTMLParser(HTMLParser):
+                isInOl = False
+                htmlList = []
+
+                def handle_starttag(self, tag, attrs):
+                        if tag == "ol":
+                                attrs = list(itertools.chain(*attrs))
+                                if "articles-list" in attrs:
+                                        self.isInOl = True
+
+                        if self.isInOl == True:
+                                attrs = list(itertools.chain(*attrs))
+                                if "href" in attrs:
+                                        self.htmlList.append("http://bleacherreport.com/" + attrs[1])
+
+
+                def handle_endtag(self, tag):
+                        if tag == "ol":
+                                self.isInOl = False
+
+                def handle_data(self, data):
+                        if self.isInOl == True:
+                                #print data
+                                pass
+
+        #instantiate the parser and feed it some HTML
+        parser = MyHTMLParser()
+
+        articlesList = []
+        numPages = 1 + numArticles / 30
+
+        for i in range(numPages):
+                parser.feed(requests.get("http://bleacherreport.com/articles?page=%d" % i).text)
+                articlesList.extend(parser.htmlList)
+
+        return articlesList
