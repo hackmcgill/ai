@@ -11,22 +11,18 @@ def make_soup(url):
 	
 def getPage(url):
     soup = make_soup(url)
-    #content = soup.find('div', {"class" : "article-body"})
-    
-    # mp: Added this part in to properly get the content
     content = soup.find('div', {'class' : 'article-body'})
-    # end addition
     
     if content == None:
         return False, False
         
-    # mp: Second part added in to properly get the html
+    # mp: Part added in to get the html without removed whitespace (was having issues with this before
+    # for some reason)
     dat = ""
     for item in content.contents:
         dat = "%s%s" % (dat, item)
-    # end addition
-    
     content = dat
+    # end addition
 
     keywords = soup.find('meta', {'name': 'keywords'})['content'].lower()
     if "soccer" in keywords:
