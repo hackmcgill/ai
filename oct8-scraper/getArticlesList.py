@@ -32,7 +32,6 @@ def getArticlesList(numArticles):
 
         #instantiate the parser and feed it some HTML
         parser = MyHTMLParser()
-
         numPages = 1 + int(numArticles / 30)
 
         for i in range(numPages):
