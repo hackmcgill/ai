@@ -29,7 +29,7 @@ In python and (maybe) scala.
 - Artificial Intelligence: A Modern Approach
 
 ##hone your skills
-- hackerrank.com
+- http://hackerrank.com
 
 ##libraries for artificial intelligence
 
