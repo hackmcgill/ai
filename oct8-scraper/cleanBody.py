@@ -17,13 +17,13 @@ class MyHTMLParser(HTMLParser):
 
 # Main function called with the body of the article.
 def cleanBody(body):
-    body = body.strip() # added this as well
+    body = body.strip() # mp: 
     text = removeTags(body)
     text = removePunctuation(text)
     text = removeNumbers(text) 
-    text = text.replace("\n", "") # added to remove newlines
-    text = ' '.join(text.split()) # added to remove any whitespace (split() by default splits on all whitespace). 
-                                  # this is not the most efficient method
+    text = text.replace("\n", "") # mp: added to remove newlines
+    text = ' '.join(text.split()) # mp: added to remove any whitespace (split() by default splits on all whitespace). 
+                                  # this is not the most efficient method but lol
     return text.lower()	
 
 # Given a string, return the string without any numbers
@@ -45,7 +45,7 @@ def removePunctuation(text):
 	words = text.split(" ")
 	for i in range(0,len(words)):
 		for punc in string.punctuation:
-			if punc == "'" or punc == "-":
+			if punc == "'" or punc == "-": # mp : added in - as well, seemed like a good idea
 				words[i] = words[i].replace(punc, "").strip()
 			else:
 				words[i] = words[i].replace(punc, " ").strip()

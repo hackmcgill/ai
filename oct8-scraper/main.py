@@ -1,29 +1,42 @@
-import getArticlesList as getArticlesList
+# Number of articles to get 
+num_articles = 10
+
+# Uncomment the getList method you want to use
+#import getArticlesList as getList
+#import getList as getList
+#import ueg1990_getListOfArticles as getList
+
+# Import the getPage method
 import getPage as getPage
+
+# Import the cleanBody method
 import cleanBody as cleanBody
 
-articles = getArticlesList.getArticlesList(10)
+articles = getList.getList(num_articles)
 
 data = []
-string = ""
-count = [0] * 5
-# tennis
-# soccer
-# football
-# basketball
-# nil
+count = [0] * 5 # create list of 5 zeros 
+# tennis (0)
+# soccer (1)
+# football (2)
+# basketball (3)
+# nil (4)
 
 max_per_category = 1
 c = 0
 
 print "Size of articles:", len(articles)
 
+# for each article in articles
 for arturl in articles:
+    # if all categories have more than max_per_category then
+    # quit looping. nil category excluded
+    print count[0:4]
     if min(count[0:4]) < max_per_category:
         c += 1
-        print c, ".."
+        print c, "..", arturl
         category,content = getPage.getPage(arturl)
-        if category == False and content == False:
+        if category == False and content == False:  # no content on this page? add it to the nil category
             count[4] += 1
         else:
             if count[category - 1] < max_per_category:

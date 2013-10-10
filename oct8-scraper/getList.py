@@ -16,7 +16,8 @@ def getList(num):
 					self.isInOl = True
 			if self.isInOl:
 				if tag == "a":
-					htmlList.append("http://bleacherreport.com/articles" + attrs[0][1])
+                    # removed a /articles here because it's already included in the href attr
+					htmlList.append("http://bleacherreport.com" + attrs[0][1])
 		def handle_endtag(self, tag):
 			if tag == "ol":
 				self.isInOl = False

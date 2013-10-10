@@ -1,9 +1,12 @@
 # By Gueorgui Savadjiev
-
 from HTMLParser import HTMLParser
 import requests
 import itertools
 
+# mp: wrapper method
+def getList(numArticles):
+    return getArticlesList(numArticles)
+    
 def getArticlesList(numArticles):
 
         #create a subclass and override the handler methods
