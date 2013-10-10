@@ -20,7 +20,7 @@ def getArticlesList(numArticles):
                         if self.isInOl == True:
                                 attrs = list(itertools.chain(*attrs))
                                 if "href" in attrs:
-                                        self.htmlList.append("http://bleacherreport.com/" + attrs[1])
+                                        self.htmlList.append("http://bleacherreport.com" + attrs[1])
 
 
                 def handle_endtag(self, tag):
@@ -31,10 +31,9 @@ def getArticlesList(numArticles):
         parser = MyHTMLParser()
 
         articlesList = []
-        numPages = 1 + numArticles / 30
+        numPages = 1 + int(numArticles / 30)
 
         for i in range(numPages):
                 parser.feed(requests.get("http://bleacherreport.com/articles?page=%d" % i).text)
-                articlesList.extend(parser.htmlList)
-
-        return articlesList
+        
+        return parser.htmlList
