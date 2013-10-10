@@ -28,6 +28,9 @@ In python and (maybe) scala.
 - Neural Networks: A Comprehensive Foundation by Simon Haykin
 - Artificial Intelligence: A Modern Approach
 
+##hone your skills
+- hackerrank.com
+
 ##libraries for artificial intelligence
 
 - http://scikit-learn.org/stable/ (python machine learning library)
