@@ -1,9 +1,9 @@
 # Number of articles to get 
-num_articles = 10
+num_articles = 5000
 
 # Uncomment the getList method you want to use
 #import getArticlesList as getList
-#import getList as getList
+import getList as getList
 #import ueg1990_getListOfArticles as getList
 
 # Import the getPage method
@@ -22,7 +22,7 @@ count = [0] * 5 # create list of 5 zeros
 # basketball (3)
 # nil (4)
 
-max_per_category = 1
+max_per_category = 100
 c = 0
 
 print "Size of articles:", len(articles)
@@ -31,8 +31,8 @@ print "Size of articles:", len(articles)
 for arturl in articles:
     # if all categories have more than max_per_category then
     # quit looping. nil category excluded
-    print count[0:4]
-    if min(count[0:4]) < max_per_category:
+    print count[2:4]
+    if min(count[2:4]) < max_per_category:
         c += 1
         print c, "..", arturl
         category,content = getPage.getPage(arturl)
@@ -49,4 +49,4 @@ print data
 print count
 
 file = open("data.txt", "w")
-file.write("\n".join(data))
+file.write("\n".join(data).encode('utf-8'))
